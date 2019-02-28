@@ -1,0 +1,13 @@
+
+<h1><%= @patient.name %></h1>
+
+<h2>Appointments: </h2>
+
+<ul>
+  <% @patient.appointments.each do |app| %>
+  <li><strong>Time: </strong> <%= link_to app.pdate, app %></li>
+  <li><strong>Doctor: </strong> <%= link_to app.doctor.name, app.doctor %></li>
+  <br>
+  <br>
+  <% end %>
+</ul>

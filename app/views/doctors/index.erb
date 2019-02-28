@@ -1,0 +1,13 @@
+
+<h1>Doctors!</h1>
+
+<br>
+
+<ul>
+<% @doctors.each do |doc| %>
+
+<li><%= link_to doc.name, doc %>  (Patients#:  <%= doc.patients.length %>)</li>
+<br>
+
+<% end %>
+</ul>
