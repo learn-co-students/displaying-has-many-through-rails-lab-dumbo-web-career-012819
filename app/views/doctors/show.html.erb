@@ -1,0 +1,17 @@
+<h1><%= @doctor.name %></h1>
+
+<strong>Department:</strong> <%= @doctor.department %>
+
+<h2>Appointments:</h2>
+  <% @doctor.appointments.each do |appointment| %>
+    <div>
+      <strong>Patient:</strong>
+      <%= link_to appointment.patient.name, patient_path(appointment.patient) %> <br>
+
+      <strong>Date: </strong>
+      <%= appointment.appointment_datetime %>
+
+      <%= button_to "Details", appointment_path(appointment), method: "get" %>
+    </div>
+    <br>
+  <% end %>
